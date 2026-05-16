@@ -35,6 +35,19 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
+        Schema::create('Runes',function(Blueprint $table)
+        {
+            $table->id();
+            $table->String('path');
+            $table->string('keystone');
+             $table->string('rune1');
+             $table->string('rune2');
+              $table->string('rune3');
+        
+        });
+
+
     }
 
     /**
@@ -45,5 +58,6 @@ return new class extends Migration
         Schema::dropIfExists('users');
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
+           Schema::dropIfExists('Runes');
     }
 };
