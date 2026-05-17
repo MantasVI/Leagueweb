@@ -5,26 +5,56 @@ namespace App\Http\Controllers;
 use App\Models\League;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class LeagueController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $champions = http::get('https://ddragon.leagueoflegends.com/cdn/16.10.1/data/en_US/champion.json')->json();
-        return view('Champions', ['champions' => $champions]);
-    }
+  
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function Rune()
     {
-        //
+        $url = "https://ddragon.leagueoflegends.com/cdn/15.10.1/data/en_US/runesReforged.json";
+        $runes = Http::get($url)->json();
+        return view('Rune',['runes' =>$runes]);
     }
-
+   
+    public function Champions()
+    {
+        $url="https://ddragon.leagueoflegends.com/cdn/16.10.1/img/champion/";
+        $champions = Http::get('https://ddragon.leagueoflegends.com/cdn/16.10.1/data/en_US/champion.json')->json();
+        return view('Champions', ['champions' => $champions, 'url' => $url]);
+    }
+     public function Skins()
+    {
+       
+        $url="https://ddragon.leagueoflegends.com/cdn/16.10.1/img/champion/";
+        $skins = Http::get('https://ddragon.leagueoflegends.com/cdn/16.10.1/data/en_US/champion.json')->json();
+        return view('Skins', ['skins' => $skins, 'url' => $url]);
+    }
+    public function Champion($name)
+    {
+       
+       $url = "https://ddragon.leagueoflegends.com/cdn/16.10.1/data/en_US/champion/{$name}.json";
+        $champions = Http::get($url)->json();
+        $champion = $champions['data'][$name];
+      
+        return view('Champion', compact('champion'));
+    } 
+    public function Skin($name)
+    {
+       
+        $url = "https://ddragon.leagueoflegends.com/cdn/16.10.1/data/en_US/champion/{$name}.json";
+        $skins = Http::get($url)->json();
+        $champ = $skins['data'][$name];
+        $skin= $skins['data'][$name]['skins'];
+        return view('Skin', compact('skin','champ'));
+    }
     /**
      * Store a newly created resource in storage.
      */

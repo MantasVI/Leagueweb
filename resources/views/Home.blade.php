@@ -9,16 +9,16 @@
     @vite('resources/css/app.css')
     <title>Document</title>
 </head>
-<body class='bg-[#0A1428] text-white h-2000'> 
-<div class="flex p-5 bg-black justify-between fixed w-full">
-    <div class='flex items-center'> 
-        <p class='ml-10' >Logo</p>
-    </div>
+<body class='bg-[#0A1428] text-white overflow-x-hidden'> 
+<div class="  flex p-5 bg-black justify-between fixed w-full z-50 ">
     
-    <div class='flex items-center mr-10 gap-10'>
-       <button class='p-3 bg-black border border-blue-900  rounded-sm  '>sign up </button>
-       <button class='p-3 bg-black border border-blue-900  rounded-sm  '>log in </button>
-        <select class='p-3 bg-black border border-blue-900  rounded-sm outline-none'>
+    <div class='flex items-center'> <a href='https://github.com/MantasVI'><p class='ml-10' >Githubas</p></a> </div>
+   
+
+     <div class='flex items-center mr-10 gap-10'>
+       <button class='p-3 bg-black border border-blue-900 rounded-sm  hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>sign up </button>
+       <button class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>log in </button>
+        <select class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 outline-none'>
             <option  value='lt'>LT</option>
             <option  value='en'>EN</option>
         </select>
@@ -37,29 +37,29 @@
     
 </div>
 
-<div class='flex flex-col items-center justify-center mt-15'>
-    <div class='mt-10 hover:scale-105 transition-transform duration-300 shadow-md'>
-        <input class=' bg-black w-150 p-5 rounded outline-none 'type='text' placeholder='Search'>
+<div class='flex flex-col items-center justify-center mt-15 '>
+    <div class='mt-10 hover:scale-105 transition-transform duration-300 shadow-md rounded-sm border border-[#C89B3C]'>
+        <input class='text-[#C89B3C] bg-white w-150 p-5 rounded outline-none 'type='text' placeholder='Search'>
     </div>
 </div>
 
 
 <div class='flex items-center justify-center'>
-    <div class='grid grid-cols-4 gap-10 mt-40'>
-        <div class='relative rounded-xl bg-center bg-cover bg-[url("/public/images/League-of-Legends-12.jpg")] w-90 h-90 hover:scale-105 transition-transform duration-300' >
+    <div class='grid grid-cols-4 gap-10 mt-40 bg-black rounded-sm border-2 border-[#C89B3C] p-7'>
+        <div class='relative rounded-xl bg-center bg-cover bg-[url("/public/images/League-of-Legends-12.jpg")] w-90 h-90 hover:scale-105 transition-transform duration-300 border-2 border-[#C89B3C]'  >
 
             <a href="Champions" class='absolute top-0 left-0 right-0 bottom-0'></a>
             <p class= 'absolute  bottom-5/100 left-1/2  -translate-x-1/2 -translate-y-5/100  font-bold text-3xl'>Champions </p>
         </div>
-        <div class='relative rounded-xl bg-center bg-cover bg-[url("/public/images/Skins.png")] w-90 h-90 hover:scale-105 transition-transform duration-300 '>
+        <div class='relative rounded-xl bg-center bg-cover bg-[url("/public/images/Skins.png")] w-90 h-90 hover:scale-105 transition-transform duration-300 border-2 border-[#C89B3C]'>
             <a href="Skins"  class='absolute top-0 left-0 right-0 bottom-0'></a>
             <p class='absolute  bottom-5/100 left-1/2  -translate-x-1/2 -translate-y-5/100  font-bold text-3xl'>Skins</p>
         </div>
-        <div class='relative rounded-xl bg-center bg-cover bg-[url("/public/images/Items.png")] w-90 h-90 hover:scale-105 transition-transform duration-300'>
+        <div class='relative rounded-xl bg-center bg-cover bg-[url("/public/images/Items.png")] w-90 h-90 hover:scale-105 transition-transform duration-300 border-2 border-[#C89B3C]'>
             <a href="Items" class='absolute top-0 left-0 right-0 bottom-0' ></a>
             <p class='absolute  bottom-5/100 left-1/2  -translate-x-1/2 -translate-y-5/100  font-bold text-3xl '>Items</p>
         </div>
-        <div class='relative rounded-xl bg-right bg-cover bg-[url("/public/images/Sorcery.png")] w-90 h-90 hover:scale-105 transition-transform duration-300'>
+        <div class='relative rounded-xl bg-right bg-cover bg-[url("/public/images/Sorcery.png")] w-90 h-90 hover:scale-105 transition-transform duration-300 border-2 border-[#C89B3C]'>
             <a href="Runes" class='absolute top-0 left-0 right-0 bottom-0'></a>
             <p  class='absolute  bottom-5/100 left-1/2  -translate-x-1/2 -translate-y-5/100  font-bold text-3xl '>Runes</p>
         </div>
@@ -67,7 +67,10 @@
     </div>
 </div>
 
-
+<div class=' mt-30 border-1 border-[#C89B3C]'>
+    <div class='p-10 bg-black w-full absolute'>
+       
+</div>
 
 
 
