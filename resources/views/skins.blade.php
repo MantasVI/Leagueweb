@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
     <title>Document</title>
 </head>
-<body class='bg-[#0A1428] text-white h-2000'>
+<body class=' relative bg-[#0A1428] text-white overflow-x-hidden italic '>
   <div class="flex p-5 bg-black justify-between fixed w-full z-50 ">
     <div class='flex items-center'> 
         <p class='ml-10' >Logo</p>
@@ -86,6 +86,13 @@
     @endforeach
 </div>
 </div>
+
+
+
+
+
+    <div class='mt-30 p-10 bg-black w-full absolute border-1 border-[#C89B3C]'></div>
+       
 
 </body>
 </html>

@@ -7,7 +7,7 @@
       @vite('resources/css/app.css')
 </head>
 
-<body class='bg-[#0A1428] text-white overflow-x-hidden'> 
+<body class='bg-[#0A1428] text-white overflow-x-hidden italic'> 
 <div class="  flex p-5 bg-black justify-between fixed w-full z-50 ">
     
     <div class='flex items-center'> <a href='https://github.com/MantasVI'><p class='ml-10' >Githubas</p></a> </div>
@@ -47,5 +47,7 @@
     @endif
     @endforeach
 </div>
+
+ <div class='mt-30 p-10 bg-black w-full absolute border-1 border-[#C89B3C]'></div>
 </body>
 </html>

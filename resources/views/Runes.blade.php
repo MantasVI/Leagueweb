@@ -8,7 +8,7 @@
     @vite('resources/css/app.css')
     <title>Document</title>
 </head>
-<body class='bg-[#0A1428] text-white h-2000'>
+<body class='bg-[#0A1428] text-white overflow-x-hidden italic '>
     <div class="  flex p-5 bg-black justify-between fixed w-full z-50 ">
     <div class='flex items-center'> 
         <p class='ml-10' >Logo</p>
@@ -35,12 +35,13 @@
         <p class='font-bold text-black text-6xl mt-10 mb-10'>What are Runes?</p>
     </div>
     <div class='mt-10 text-center'>
-        <p class='text-black text-xl tracking-wide'>Runes are a customizable system that lets players strengthen and personalize their champions before a match begins. They provide bonuses and special effects that can improve <b class='text-red-600'>damage</b>, <b class='text-[#613714]'>defense</b>, <b class='text-green-600'>healing</b>, <b class='text-white'>movement speed </b>, or <b>utility</b> depending on a player’s strategy and playstyle. Runes are divided into different paths, such as <b class='text-orange-700'>Precision</b>, <b class='text-[#7a092f]'>Domination</b>, <b class='text-blue-600'>Sorcery</b>, <b class='text-green-800'>Resolve</b>, and <b class='text-teal-600'>Inspiration</b>, each designed for specific roles or tactics. Players choose a primary rune path with a powerful “keystone” rune and a secondary path for additional bonuses, allowing them to adapt their setup to different champions and matchups. This system adds depth to the game because the right rune choices can greatly influence how a champion performs during the early, mid, and late stages of a match.</p>
+        <p class='text-black text-xl tracking-wide'>Runes are a customizable system that lets players strengthen and personalize their champions before a match begins.
+             They provide bonuses and special effects that can improve <b class='text-red-600'>damage</b>, <b class='text-[#613714]'>defense</b>, <b class='text-green-600'>healing</b>, <b class='text-white'>movement speed </b>, or <b>utility</b> depending on a player’s strategy and playstyle. Runes are divided into different paths, such as <b class='text-orange-700'>Precision</b>, <b class='text-[#7a092f]'>Domination</b>, <b class='text-blue-600'>Sorcery</b>, <b class='text-green-800'>Resolve</b>, and <b class='text-teal-600'>Inspiration</b>, each designed for specific roles or tactics. Players choose a primary rune path with a powerful “keystone” rune and a secondary path for additional bonuses, allowing them to adapt their setup to different champions and matchups. This system adds depth to the game because the right rune choices can greatly influence how a champion performs during the early, mid, and late stages of a match.</p>
     </div>
 
 </div>
 <div class='flex items-center justify-center'>
-    <div class='grid grid-cols-5 p-6 gap-10 mt-40 bg-black border border-[#C89B3C]'>
+    <div class='grid grid-cols-5 p-10 gap-10 mt-40 bg-black border border-[#C89B3C] rounded-sm'>
         <div class='relative border border-[#C89B3C] rounded-xl bg-right bg-cover bg-[url("/public/images/runes/Domination_splash_art.webp")] w-80 h-80 hover:scale-105 transition-transform duration-300 '>
 
             <a href="Rune" class='absolute top-0 left-0 right-0 bottom-0'></a>
@@ -63,6 +64,13 @@
             <p  class='absolute  bottom-3 left-0  right-0 text-center font-bold text-3xl '>Resolve</p>
         </div>
     </div>
+</div>
+
+
+
+<div class=' mt-30 border-1 border-[#C89B3C]'>
+    <div class='p-10 bg-black w-full absolute'>
+       
 </div>
 </body>
 </html>

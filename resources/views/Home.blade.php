@@ -9,7 +9,7 @@
     @vite('resources/css/app.css')
     <title>Document</title>
 </head>
-<body class='bg-[#0A1428] text-white overflow-x-hidden'> 
+<body class='bg-[#0A1428] text-white overflow-x-hidden italic '> 
 <div class="  flex p-5 bg-black justify-between fixed w-full z-50 ">
     
     <div class='flex items-center'> <a href='https://github.com/MantasVI'><p class='ml-10' >Githubas</p></a> </div>
@@ -44,8 +44,8 @@
 </div>
 
 
-<div class='flex items-center justify-center'>
-    <div class='grid grid-cols-4 gap-10 mt-40 bg-black rounded-sm border-2 border-[#C89B3C] p-7'>
+<div class='flex items-center justify-center '>
+    <div class='grid grid-cols-4 gap-10 mt-40 bg-black rounded-sm border-2 border-[#C89B3C] p-10 rounded-sm'>
         <div class='relative rounded-xl bg-center bg-cover bg-[url("/public/images/League-of-Legends-12.jpg")] w-90 h-90 hover:scale-105 transition-transform duration-300 border-2 border-[#C89B3C]'  >
 
             <a href="Champions" class='absolute top-0 left-0 right-0 bottom-0'></a>

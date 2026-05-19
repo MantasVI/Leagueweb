@@ -37,13 +37,13 @@ class LeagueController extends Controller
         $skins = Http::get('https://ddragon.leagueoflegends.com/cdn/16.10.1/data/en_US/champion.json')->json();
         return view('Skins', ['skins' => $skins, 'url' => $url]);
     }
-    public function Champion($name)
+    public function Champion($id)
     {
        
-       $url = "https://ddragon.leagueoflegends.com/cdn/16.10.1/data/en_US/champion/{$name}.json";
+       $url = "https://ddragon.leagueoflegends.com/cdn/16.10.1/data/en_US/champion/{$id}.json";
         $champions = Http::get($url)->json();
-        $champion = $champions['data'][$name];
-      
+        $champion = $champions['data'][$id];
+     
         return view('Champion', compact('champion'));
     } 
     public function Skin($name)
@@ -55,6 +55,14 @@ class LeagueController extends Controller
         $skin= $skins['data'][$name]['skins'];
         return view('Skin', compact('skin','champ'));
     }
+    public function Items()
+    {   
+        $url="https://ddragon.leagueoflegends.com/cdn/15.10.1/data/en_US/item.json";
+        $itemurl = "https://ddragon.leagueoflegends.com/cdn/16.10.1/img/item/";
+        $items = Http::get($url)->json();
+        return view('Items',['items' =>$items , 'url' => $itemurl]);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
