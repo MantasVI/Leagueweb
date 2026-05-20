@@ -21,9 +21,17 @@ class LeagueController extends Controller
     {
         $url = "https://ddragon.leagueoflegends.com/cdn/15.10.1/data/en_US/runesReforged.json";
         $runes = Http::get($url)->json();
-        return view('Rune',['runes' =>$runes]);
+        $imgurl="https://ddragon.leagueoflegends.com/cdn/img";
+        return view('Runes',['runes' =>$runes, 'url' => $imgurl]);
     }
-   
+   public function Runes($name)
+    {
+        $url = "https://ddragon.leagueoflegends.com/cdn/15.10.1/data/en_US/runesReforged.json";
+        $runes = Http::get($url)->json();
+        $imgurl="https://ddragon.leagueoflegends.com/cdn/img";
+    
+        return view('Rune',['runes' =>$runes, 'url' => $imgurl,'name'=> $name ]);
+    }
     public function Champions()
     {
         $url="https://ddragon.leagueoflegends.com/cdn/16.10.1/img/champion/";

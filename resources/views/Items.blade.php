@@ -31,14 +31,13 @@
 </div>
 
 <div class='flex text-black items-center justify-center flex-col p-50 bg-[#C89B3C]'>
-    <div >
-        <p class='font-bold text-black text-6xl mt-10 mb-10'>What are items?</p>
-    </div>
-    <div>
+    <div class='flex-col  items-center justify-center' >
+        <p class='font-bold text-black text-center text-6xl mt-10 mb-10'>What are items?</p> 
         <p class='text-black text-center text-lg'>items are equipment that champions buy during a match using gold earned from kills, minions, and objectives. 
             Items make champions stronger by granting stats such as damage, health, armor, magic power, attack speed, and movement speed, and many also provide special passive or active effects like healing, shields, slows, or bonus damage.
              Different champions build different items depending on their role and the situation, making item builds an important part of the game’s strategy.</p>
     </div>
+  
 
     
 </div>
@@ -91,23 +90,18 @@
 
    </div>
     <hr class="border-1 ml-20 mr-20 border-[#C89B3C] mb-30 w-90%">
-    <div class='grid grid-cols-9 gap-10 p-15 ml-10 mr-10 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
+    <div class='grid  grid-cols-9 gap-10 gap-y-20 p-15 ml-10 mr-10 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto '>
        @php $uniqueItems = collect($items['data'])->unique('name') ->values() ->all(); 
         $excluded = ['Gunmetal Greaves','Cappa Juice'] ;   @endphp
 
        @foreach ($uniqueItems as $item)
         @if($item['maps']['11'] == true && ($item['gold']['purchasable'] == true) && (!in_array($item['name'],$excluded)) && ($item['gold']['total']>=250 && $item['gold']['total']<=450 ))
   
-        
-                    
-            
-            <a href=""><div class='group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C]  '>
-                <img 
-                    class='w-full h-[150px] object-cover rounded ' 
-                    src="{{ $url . $item['image']['full'] }}"
-                >
-              <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] text-xl hover:transition-transform duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
-            </div></a>
+            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+                <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
+            </div>
         @endif
 
         @endforeach
@@ -125,7 +119,7 @@
 
    </div>
     <hr class="border-1 ml-20 mr-20 border-[#C89B3C] mb-30 w-90%">
-    <div class='grid grid-cols-9 gap-10 p-15 ml-10 mr-10 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
+    <div class='grid grid-cols-9 gap-10 gap-y-20 p-15 ml-10 mr-10 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
         @php $uniqueItems = collect($items['data'])->unique('name') ->values() ->all(); 
         $excluded = ['Gunmetal Greaves','Cappa Juice','Watchful Wardstone',"Mejai's Soulstealer","Shattered Armguard"] ;   @endphp
     
@@ -137,14 +131,11 @@
         
                     
             
-            <a href=""><div class='group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C]  '>
-                <img 
-                    class='w-full h-[150px] object-cover rounded ' 
-                    src="{{ $url . $item['image']['full'] }}"
-                >
-              <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] text-xl hover:transition-transform duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> 
-                <b class='text-white'>{{ $item['name'] }}</b> <br>   Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
-            </div></a>
+            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+                <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
+            </div>
         @endif
 
         @endforeach
@@ -161,7 +152,7 @@
 
    </div>
     <hr class="border-1 ml-20 mr-20 border-[#C89B3C] mb-30 w-90%">
-    <div class='grid grid-cols-9 gap-10 p-15 ml-10 mr-10 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
+    <div class='grid grid-cols-9 gap-10 gap-y-20 p-15 ml-10 mr-10 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
         @php 
     $excluded = ['Gunmetal Greaves','Cappa Juice','Watchful Wardstone','Vigilant Wardstone','Verdant Barrier',"Seeker's Armguard","Shattered Armguard",'Trailblazer',"Anathema's Chains"];   
     $IncludedTags = ['Armor', 'ArmorPenetration', 'AttackSpeed', 'Aura', 'Consumable', 'CooldownReduction', 'CriticalStrike', 'Damage', 'GoldPer', 'Health', 'HealthRegen', 'Lane', 'LifeSteal', 'MagicPenetration', 'Mana', 'ManaRegen', 'NonbootsMovement', 'OnHit', 'SpellBlock', 'SpellDamage', 'Stealth', 'Tenacity', 'Trinket', 'Vision', 'Active', 'AbilityHaste', 'Slow', 'SpellVamp'];
@@ -173,14 +164,11 @@
  
            
                 
-            <a href=""><div class='group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C]  '>
-                <img 
-                    class='w-full h-[150px] object-cover rounded ' 
-                    src="{{ $url . $item['image']['full'] }}"
-                >
-              <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] text-xl hover:transition-transform duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> 
-              <b class='text-white'>{{ $item['name'] }}</b> <br>   Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
-            </div></a>
+            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+                <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
+            </div>
         @endif
 
         @endforeach
@@ -196,19 +184,18 @@
 
    </div>
     <hr class="border-1 ml-20 mr-20 border-[#C89B3C] mb-30 w-90%">
-    <div class='grid  grid-cols-9 gap-10 p-15 ml-10 mr-10 mb-40 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
+    <div class='grid  grid-cols-9 gap-10 gap-y-20 p-15 ml-10 mr-10 mb-40 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
         @foreach ($items['data'] as $item)
         @if($item['maps']['11'] == true)
         @if(in_array('Boots', $item['tags']))
         
                     
             
-            <a href=""><div class='group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C]  '>
-                <img class='w-full h-[150px] object-cover rounded ' src="{{ $url . $item['image']['full'] }}">
-             
-                <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] text-xl hover:transition-transform duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'>
-                  <b class='text-white'>{{ $item['name'] }}</b> <br>   Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
-            </div></a>
+            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+                <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
+            </div>
             @endif   @endif
 
         @endforeach
@@ -225,7 +212,7 @@
 
    </div>
     <hr class="border-1 ml-20 mr-20 border-[#C89B3C] mb-30 w-90%">
-    <div class='grid grid-cols-9 gap-10 p-15 ml-10 mr-10 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
+    <div class='grid grid-cols-9 gap-y-20 gap-10 p-15 ml-10 mr-10 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
         @php 
     $excluded = ['Gunmetal Greaves','Cappa Juice','Watchful Wardstone','Vigilant Wardstone','Verdant Barrier',"Seeker's Armguard","Shattered Armguard",'Trailblazer',"Anathema's Chains"];   
     $IncludedTags = ['Armor', 'ArmorPenetration', 'AttackSpeed', 'Aura', 'Consumable', 'CooldownReduction', 'CriticalStrike', 'Damage', 'GoldPer', 'Health', 'HealthRegen', 'Lane', 'LifeSteal', 'MagicPenetration', 'Mana', 'ManaRegen', 'NonbootsMovement', 'OnHit', 'SpellBlock', 'SpellDamage', 'Stealth', 'Tenacity', 'Trinket', 'Vision', 'Active', 'AbilityHaste', 'Slow', 'SpellVamp'];
@@ -237,14 +224,11 @@
  
            
                 
-            <a href=""><div class='group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C]  '>
-                <img 
-                    class='w-full h-[150px] object-cover rounded ' 
-                    src="{{ $url . $item['image']['full'] }}"
-                >
-              <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] text-xl hover:transition-transform duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'>
-                 <b class='text-white'>{{ $item['name'] }}</b> <br>   Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
-            </div></a>
+            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+                <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
+            </div>
         @endif
 
         @endforeach
@@ -260,7 +244,7 @@
 
    </div>
     <hr class="border-1 ml-20 mr-20 border-[#C89B3C] mb-30 w-90%">
-    <div class='grid grid-cols-9 gap-10 p-15 ml-10 mr-10 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
+    <div class='grid grid-cols-9 gap-10 gap-y-20 p-15 ml-10 mr-10 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
         @php 
     $excluded = ['Gunmetal Greaves','Cappa Juice','Watchful Wardstone','Vigilant Wardstone','Verdant Barrier',"Seeker's Armguard","Shattered Armguard",'Trailblazer',"Anathema's Chains"];   
     $IncludedTags = ['Armor', 'ArmorPenetration', 'AttackSpeed', 'Aura', 'Consumable', 'CooldownReduction', 'CriticalStrike', 'Damage', 'GoldPer', 'Health', 'HealthRegen', 'Lane', 'LifeSteal', 'MagicPenetration', 'Mana', 'ManaRegen', 'NonbootsMovement', 'OnHit', 'SpellBlock', 'SpellDamage', 'Stealth', 'Tenacity', 'Trinket', 'Vision', 'Active', 'AbilityHaste', 'Slow', 'SpellVamp'];
@@ -272,14 +256,11 @@
  
            
                 
-            <a href=""><div class='group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C]  '>
-                <img 
-                    class='w-full h-[150px] object-cover rounded ' 
-                    src="{{ $url . $item['image']['full'] }}"
-                >
-              <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] text-xl hover:transition-transform duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[350px]'>
-                 <b class='text-white'>{{ $item['name'] }}</b> <br>   Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
-            </div></a>
+            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+                <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
+            </div>
         @endif
 
         @endforeach
@@ -307,14 +288,11 @@
        @foreach ($items['data'] as $item)
         @if($item['maps']['12'] == true  &&  ($item['gold']['purchasable'] == true) && !empty(array_intersect($item['tags'], $IncludedTags)) && !in_array($item['name'], $excluded) && $item['gold']['total'] <= 950 ) 
             
-            <a href=""><div class='group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C]  '>
-                <img 
-                    class='w-full h-[150px] object-cover rounded ' 
-                    src="{{ $url . $item['image']['full'] }}"
-                >
-     <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] text-xl hover:transition-transform duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> 
-       <b class='text-white'>{{ $item['name'] }}</b> <br>   Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
-            </div></a>
+            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+                <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
+            </div>
             @endif  
 
         @endforeach
@@ -342,14 +320,11 @@
        @foreach ($uniqueItems as $item)
         @if($item['maps']['12'] == true && (in_array('Consumable', $item['tags']))  && (!in_array($item['name'],$excluded))  && ($item['gold']['purchasable'] == true) ) 
             
-            <a href=""><div class='group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C]  '>
-                <img 
-                    class='w-full h-[150px] object-cover rounded ' 
-                    src="{{ $url . $item['image']['full'] }}"
-                >
-     <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] text-xl hover:transition-transform duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'>
-         <b class='text-white'>{{ $item['name'] }}</b> <br>   Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
-            </div></a>
+            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+                <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white text-center'>{{ $item['name'] }}</b></p>
+                <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
+            </div>
             @endif  
 
         @endforeach
@@ -373,12 +348,11 @@
         
                     
             
-            <a href=""><div class='group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C]  '>
-                <img class='w-full h-[150px] object-cover rounded ' src="{{ $url . $item['image']['full'] }}">
-             
-                <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] text-xl hover:transition-transform duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'>
-                    <b class='text-white'>{{ $item['name'] }}</b> <br>   Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
-            </div></a>
+           <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+                <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white text-center'>{{ $item['name'] }}</b></p>
+                <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
+            </div>
             @endif   @endif
 
         @endforeach

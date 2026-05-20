@@ -25,10 +25,12 @@ Route::get('/Items', function () {
 Route::get('/Runes', function () {
     return view('Runes');
 });
+
 Route::get('/Items',[LeagueController::class,'Items']);
 Route::get('/Skin/{name}',[LeagueController::class,'Skin']);
 Route::get('/Skins',[LeagueController::class,'Skins']);
-Route::get('/Rune', [LeagueController::class, 'Rune']);
+Route::get('/Runes', [LeagueController::class, 'Rune']);
+Route::get('/Rune/{name}', [LeagueController::class, 'Runes']);
 Route::get('/Champions', [LeagueController::class, 'Champions']);
 
 Route::get('/Champion/{id}',[LeagueController::class,'Champion']);

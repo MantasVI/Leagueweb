@@ -42,27 +42,13 @@
 </div>
 <div class='flex items-center justify-center'>
     <div class='grid grid-cols-5 p-10 gap-10 mt-40 bg-black border border-[#C89B3C] rounded-sm'>
-        <div class='relative border border-[#C89B3C] rounded-xl bg-right bg-cover bg-[url("/public/images/runes/Domination_splash_art.webp")] w-80 h-80 hover:scale-105 transition-transform duration-300 '>
+        @foreach ($runes as $rune)
+        <div style="background-image: url('/images/runes/{{ $rune['name'] }}_splash_art.webp')" class="relative border border-[#C89B3C] rounded-xl bg-right bg-cover  w-80 h-80 hover:scale-105 transition-transform duration-300 ">
 
-            <a href="Rune" class='absolute top-0 left-0 right-0 bottom-0'></a>
-            <p class= 'absolute  bottom-3 left-0  right-0 text-center font-bold text-3xl'>Domination</p>
+            <a href="/Rune/{{$rune['name']}}" class='absolute top-0 left-0 right-0 bottom-0'></a>
+            <p class= 'absolute  bottom-3 left-0  right-0 text-center font-bold text-3xl'>{{$rune['name']}}</p>
         </div>
-        <div class='relative border border-[#C89B3C] rounded-xl bg-right bg-cover bg-[url("/public/images/runes/Inspiration_splash_art.webp")] w-80 h-80 hover:scale-105 transition-transform duration-300 '>
-            <a href="/Runes/Inspiration"  class='absolute top-0 left-0 right-0 bottom-0'></a>
-            <p class='absolute  bottom-3 left-0  right-0 text-center font-bold text-3xl'>Inspiration</p>
-        </div>
-        <div class='relative border border-[#C89B3C] rounded-xl bg-right bg-cover bg-[url("/public/images/runes/Precision_splash_art.webp")] w-80 h-80 hover:scale-105 transition-transform duration-300'>
-            <a href="/Runes/Precision" class='absolute top-0 left-0 right-0 bottom-0' ></a>
-            <p class='absolute  bottom-3 left-0  right-0 text-center font-bold text-3xl '>Precision</p>
-        </div>
-        <div class='relative border border-[#C89B3C] rounded-xl bg-right bg-cover bg-[url("/public/images/runes/Sorcery_splash_art.webp")] w-80 h-80 hover:scale-105 transition-transform duration-300'>
-            <a href="/Runes/Sorcery" class='absolute top-0 left-0 right-0 bottom-0'></a>
-            <p  class='absolute  bottom-3 left-0  right-0 text-center font-bold text-3xl '>Sorcery</p>
-        </div>
-          <div class='relative border border-[#C89B3C] rounded-xl bg-right bg-cover bg-[url("/public/images/runes/Resolve_splash_art.webp")] w-80 h-80 hover:scale-105 transition-transform duration-300'>
-            <a href="/Runes/Resolve" class='absolute top-0 left-0 right-0 bottom-0'></a>
-            <p  class='absolute  bottom-3 left-0  right-0 text-center font-bold text-3xl '>Resolve</p>
-        </div>
+       @endforeach
     </div>
 </div>
 
@@ -72,5 +58,8 @@
     <div class='p-10 bg-black w-full absolute'>
        
 </div>
+
+
+
 </body>
 </html>

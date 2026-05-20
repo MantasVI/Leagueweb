@@ -27,21 +27,14 @@
 </div>
 
 <div class='flex text-black items-center justify-center flex-col p-40 bg-[#C89B3C]'>
-    <div class='flex '>
+    <div class='flex flex-col justify-center items-center'>
         <p class='font-bold text-black text-6xl mt-10 mb-10'>Welcome to the League of Legends database!</p>
-    </div>
-    <div>
         <p class='text-black text-lg'>Here you can find information about champions, skins, and items in the game.</p>
     </div>
 
-    
 </div>
 
-<div class='flex flex-col items-center justify-center mt-15 '>
-    <div class='mt-10 hover:scale-105 transition-transform duration-300 shadow-md rounded-sm border border-[#C89B3C]'>
-        <input class='text-[#C89B3C] bg-white w-150 p-5 rounded outline-none 'type='text' placeholder='Search'>
-    </div>
-</div>
+
 
 
 <div class='flex items-center justify-center '>

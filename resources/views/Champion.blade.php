@@ -30,16 +30,14 @@
 <div class='pb-10'></div> 
     
    
- <div style="background-image: url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{$champion['id']}}_0.jpg')" class="bg-cover bg-center flex  items-center justify-center flex-col   h-[1500px] w-full">
+    <div style="background-image: url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{$champion['id']}}_0.jpg')" class="bg-cover bg-center flex  items-center justify-center flex-col   h-[1500px] w-full">
 
-        <div class='flex '>
+        <div class='flex-col justify-center items-center '>
             <p class='text-[#C89B3C] italic text-8xl font-bold'>{{ $champion['title']}}</p>
-            
+            <p class='font-bold italic text-white text-4xl  text-center mt-10 mb-5'>{{ $champion['name'] }}</p>
         </div>
 
-        <div>
-            <p class='font-bold italic text-white text-4xl  mt-10 mb-5'>{{ $champion['name'] }}</p>
-        </div>
+       
 
             <div class='flex flex-col items-center justify-center p-5 mt-20 border-2 border-[#C89B3C] bg-black  ' >
                 @foreach($champion['tags'] as $tag)
@@ -48,7 +46,7 @@
                 @endforeach
             </div>
 
-        </div>
+    </div>
     
     
 </div>
