@@ -2,11 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LeagueController;
-
+use App\Http\Controllers\AuthController;
 
 Route::get('/', function () {
     return view('Home');
 });
+Route::get('/Sign',[AuthController::class, 'showsign']);
+Route::post('/Sign',[AuthController::class, 'insert']);
+Route::get('/Login',[AuthController::class,'showlogin']);
+Route::Post('/Login',[AuthController::class,'login']);
+
 Route::get('/Home', function () {
     return view('Home');
 });

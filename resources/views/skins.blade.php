@@ -10,24 +10,27 @@
 </head>
 <body class=' relative bg-[#0A1428] text-white overflow-x-hidden italic '>
   <div class="flex p-5 bg-black justify-between fixed w-full z-50 ">
-    <div class='flex items-center'> 
-        <p class='ml-10' >Logo</p>
-    </div>
-
-    <div class='flex items-center justify-center'> 
-        <a href='Home'><button class='p-3 bg-black border border-blue-900  rounded-sm  hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>Return</button></a>
-       
-    </div>
-
+    <a href='/Home'>  <button id='btn2' class='p-3 bg-black border border-blue-900 ml-5 pr-10 pl-10 rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>Back</button></a>
+@guest
      <div class='flex items-center mr-10 gap-10'>
-       <button class='p-3 bg-black border border-blue-900 rounded-sm  hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>sign up </button>
-       <button class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>log in </button>
-        <select class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 outline-none'>
-            <option  value='lt'>LT</option>
-            <option  value='en'>EN</option>
+       <a href='/Sign'> <button id='btn1' class='p-3 bg-black border border-blue-900 rounded-sm  hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>sign up </button></a>
+      <a href='/Login'>  <button id='btn2' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>log in </button></a>
+        <select id='btn3' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 outline-none'>
+            <option id='o1'  value='lt'>LT</option>
+            <option id='o2' value='en'>EN</option>
         </select>
     </div>
+@endguest
 
+@auth
+  <div class='flex items-center mr-10 gap-10'>
+        <p class='font-bold text-white text-2xl'>User Conected: <b class='text-[#C89B3C]'>{{Auth::user()->username}}</b></p>
+        <select id='btn3' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 outline-none'>
+            <option id='o1'  value='lt'>LT</option>
+            <option id='o2' value='en'>EN</option>
+        </select>
+    </div>
+@endauth
 </div>
 
 <div class='flex text-black items-center justify-center flex-col p-40 bg-[#C89B3C]'>
@@ -42,53 +45,44 @@
 <hr class="border-1 ml-20 mr-20 border-[#C89B3C] mt-30 w-90%">
 <div class='flex justify-center items-center  mt-30 '>    
      
- <p class='text-3xl font-bold '>Here you can find information about all the champions in the game, including their abilities, lore, and tips! </p>
+ <p class='text-3xl font-bold text-[#C89B3C]'>Here you can find information about all the champion skins in the game</p>
 </div>
 <hr class="border-1 ml-20 mr-20 border-[#C89B3C] mt-30 w-90%">
 
-<div class='flex-col justify-center items-center  mt-40 border-1 border-[#C89B3C] ml-30 mr-30 mb-30 bg-black'>
-
+<div class='flex-col justify-center items-center  mt-40 border-1 border-[#C89B3C] ml-60 mr-60 mb-30 bg-black'>
+    <div class='flex flex-col items-center justify-center mt-15 '>
+        <div class='mt-10  '>
+            <p class='text-xl font-bold text-center text-[#C89B3C] mb-10'>Search for a champion: </p>
+            <input class='text-[#C89B3C] bg-white w-150 p-5 rounded outline-none hover:scale-105 transition-transform duration-300 shadow-md rounded-sm 'type='text' placeholder='Search'>
+        </div>
+        
+    </div>
+    <hr class="border-1 ml-20 mr-20 border-[#C89B3C] mt-30 w-90%">
     <div class='flex justify-center items-center mt-20 '>    
-    <p class='text-xl font-bold '>Filter Champions by type:</p>
+    <p class='text-xl font-bold text-[#C89B3C] '>Filter Champions by type:</p>
     </div>
 
     <div class='flex justify-center items-center gap-20 mt-10'>
         
-        <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Fighters</button>
-        <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Assassins</button>
-        <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Mages</button>
-        <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Marksmen</button>
-        <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Supports</button>
-        <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Tanks</button>
+        <button class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Fighters</button>
+        <button class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Assassins</button>
+        <button class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Mages</button>
+        <button class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Marksmen</button>
+        <button class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Supports</button>
+        <button class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Tanks</button>
 
     </div>
 
 
-    <div class='flex justify-center items-center  mt-20'>    
-    <p class='text-xl font-bold '>Filter Champions by Role:</p>
-    </div>
-    <div class='flex justify-center items-center gap-20 mt-20 mb-20'>
-        
-    <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Top</button>
-    <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Mid</button>
-    <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Jungle</button>
-    <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>ADC</button>
-    <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Support</button>
-    
 
-    </div>
-    
+     <hr class="border-1 ml-20 mr-20 mb-20 border-[#C89B3C] mt-30 w-90%">
  </div>
 
- <div class='flex flex-col items-center justify-center mt-15 '>
-    <div class='mt-10 hover:scale-105 transition-transform duration-300 shadow-md rounded-sm border border-[#C89B3C]'>
-        <input class='text-[#C89B3C] bg-white w-150 p-5 rounded outline-none 'type='text' placeholder='Search'>
-    </div>
-</div>
+ 
 
 
 <div class='flex justify-center items-center '>
-<div class='grid grid-cols-7 gap-10 gap-y-20 p-10 mt-40 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
+<div class='grid grid-cols-7 gap-10 gap-y-20 p-15 mt-40 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
     @foreach ($skins['data'] as $skin)
         <a href="/Skin/{{ $skin['id'] }}"><div class='relative cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C]  '>
             <img 
