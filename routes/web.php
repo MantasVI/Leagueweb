@@ -10,7 +10,8 @@ Route::get('/', function () {
 Route::get('/Sign',[AuthController::class, 'showsign']);
 Route::post('/Sign',[AuthController::class, 'insert']);
 Route::get('/Login',[AuthController::class,'showlogin']);
-Route::Post('/Login',[AuthController::class,'login']);
+Route::post('/Login',[AuthController::class,'login']);
+Route::post('/Logout',[AuthController::class,'logout']);
 
 Route::get('/Home', function () {
     return view('Home');

@@ -1,29 +1,81 @@
-const Fighters = document.querySelector('#Fighters');
-const Assassins = document.querySelector('#Assassins');
-const Mages = document.querySelector('#Mages');
-const Marksmen = document.querySelector('#Marksmen');
-const Supports = document.querySelector('#Supports');
-const Tanks = document.querySelector('#Tanks');
+const Fighters = document.querySelector('#Fighter');
+const Assassins = document.querySelector('#Assassin');
+const Mages = document.querySelector('#Mage');
+const Marksmen = document.querySelector('#Marksman');
+const Supports = document.querySelector('#Support');
+const Tanks = document.querySelector('#Tank');
+const all = document.querySelector('#All');
+const inputas = document.querySelector('.inputas');
+
+
+    inputas.addEventListener('input',() =>{
+       let x=inputas.value.toLowerCase();
+        document.querySelectorAll('.champ').forEach((card)=>{ 
+         let y= card.querySelector('.textas').innerHTML.toLowerCase();
+           if(y.includes(x))
+           {
+            card.style.display = 'block'
+           }
+           else
+           {
+             card.style.display = 'none'
+           }
+        });
+
+
+    });
+
+
+function tipas(hello){
+    
+document.querySelectorAll('.champ').forEach((card)=>{
+const tags = card.dataset.tags;
+   if(tags.includes(hello))
+   {
+    card.style.display = 'block'
+   }
+   else
+   {
+    card.style.display = 'none'
+   }
+
+});
+
+
+}
+function allas(){
+   document.querySelectorAll('.champ').forEach((champ) =>{
+    champ.style.display='block';
+   }); 
+}
+
+all.addEventListener('click',()=>{
+    allas();
+});
 
 Fighters.addEventListener('click',()=>{
-    console.log(Fighters.innerHTML);
+    tipas(Fighters.innerHTML)
 });
 Assassins.addEventListener('click',()=>{
-    console.log(Assassins);
+        tipas(Assassins.innerHTML)
+
 });
 
 Mages.addEventListener('click',()=>{
-    console.log(Mages);
+    tipas(Mages.innerHTML)
 });
 
 Marksmen.addEventListener('click',()=>{
-    console.log(Marksmen);
+   
+    tipas(Marksmen.innerHTML)
 });
 
 Supports.addEventListener('click',()=>{
-    console.log(Supports);
+    
+        tipas(Supports.innerHTML)
 });
 
 Tanks.addEventListener('click',()=>{
-    console.log(Tanks);
+    tipas(Tanks.innerHTML)
+ 
 });

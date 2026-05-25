@@ -13,22 +13,19 @@
     <a href='/Home'>  <button id='btn2' class='p-3 bg-black border border-blue-900 ml-5 pr-10 pl-10 rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>Back</button></a>
 @guest
      <div class='flex items-center mr-10 gap-10'>
-       <a href='/Sign'> <button id='btn1' class='p-3 bg-black border border-blue-900 rounded-sm  hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>sign up </button></a>
-      <a href='/Login'>  <button id='btn2' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>log in </button></a>
-        <select id='btn3' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 outline-none'>
-            <option id='o1'  value='lt'>LT</option>
-            <option id='o2' value='en'>EN</option>
-        </select>
+       <a href='/Sign'> <button class='p-3 bg-black border border-blue-900 rounded-sm  hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>sign up </button></a>
+      <a href='/Login'>  <button  class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>log in </button></a>
+        
     </div>
 @endguest
 
 @auth
   <div class='flex items-center mr-10 gap-10'>
         <p class='font-bold text-white text-2xl'>User Conected: <b class='text-[#C89B3C]'>{{Auth::user()->username}}</b></p>
-        <select id='btn3' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 outline-none'>
-            <option id='o1'  value='lt'>LT</option>
-            <option id='o2' value='en'>EN</option>
-        </select>
+        <form method='POST' action='/Logout'>
+            @csrf
+         <button type='submit' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>log out </button>
+        </form>
     </div>
 @endauth
 </div>
@@ -53,7 +50,7 @@
     <div class='flex flex-col items-center justify-center mt-15 '>
         <div class='mt-10  '>
             <p class='text-xl font-bold text-center text-[#C89B3C] mb-10'>Search for a champion: </p>
-            <input class='text-[#C89B3C] bg-white w-150 p-5 rounded outline-none hover:scale-105 transition-transform duration-300 shadow-md rounded-sm 'type='text' placeholder='Search'>
+            <input class='inputas text-[#C89B3C] bg-white w-150 p-5 rounded outline-none hover:scale-105 transition-transform duration-300 shadow-md rounded-sm 'type='text' placeholder='Search'>
         </div>
         
     </div>
@@ -62,15 +59,15 @@
     <p class='text-xl font-bold text-[#C89B3C] '>Filter Champions by type:</p>
     </div>
 
-    <div class='flex justify-center items-center gap-20 mt-10'>
+      <div class='flex justify-center items-center gap-20 mt-10 flex-wrap'>
         
-        <button class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Fighters</button>
-        <button class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Assassins</button>
-        <button class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Mages</button>
-        <button class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Marksmen</button>
-        <button class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Supports</button>
-        <button class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Tanks</button>
-
+        <button id='Fighter' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Fighter</button>
+        <button id='Assassin' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Assassin</button>
+        <button id='Mage' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Mage</button>
+        <button id='Marksman' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Marksman</button>
+        <button id='Support' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Support</button>
+        <button id='Tank' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Tank</button>
+        <button id='All' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Reset</button>
     </div>
 
 
@@ -84,12 +81,12 @@
 <div class='flex justify-center items-center '>
 <div class='grid grid-cols-7 gap-10 gap-y-20 p-15 mt-40 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto'>
     @foreach ($skins['data'] as $skin)
-        <a href="/Skin/{{ $skin['id'] }}"><div class='relative cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C]  '>
+        <a class='champ'data-tags="{{implode(',',$skin['tags']) }}"  href="/Skin/{{ $skin['id'] }}"><div  class=' relative cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C]  '>
             <img 
-                class='w-[200px] h-[200px] object-cover rounded' 
+                class='w-[200px] h-[200pxs] object-cover rounded' 
                 src="{{ $url . $skin['image']['full'] }}"
             >
-            <p class='absolute -bottom-10 left-0 right-0 text-center text-xl font-bold text-white text-shadow-lg'>
+            <p class='textas absolute -bottom-10 left-0 right-0 text-center text-xl font-bold text-white text-shadow-lg'>
                 {{ $skin['name'] }}
             </p>
         </div></a>
@@ -103,6 +100,7 @@
 
     <div class='mt-30 p-10 bg-black w-full absolute border-1 border-[#C89B3C]'></div>
        
-
+    <script src='/js/champions.js'></script>
+   
 </body>
 </html>

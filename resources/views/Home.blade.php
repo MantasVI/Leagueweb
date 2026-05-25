@@ -16,22 +16,19 @@
    
 @guest
      <div class='flex items-center mr-10 gap-10'>
-       <a href='/Sign'> <button id='btn1' class='p-3 bg-black border border-blue-900 rounded-sm  hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>sign up </button></a>
-      <a href='/Login'>  <button id='btn2' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>log in </button></a>
-        <select id='btn3' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 outline-none'>
-            <option id='o1'  value='lt'>LT</option>
-            <option id='o2' value='en'>EN</option>
-        </select>
+       <a href='/Sign'> <button class='p-3 bg-black border border-blue-900 rounded-sm  hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>sign up </button></a>
+      <a href='/Login'>  <button  class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>log in </button></a>
+        
     </div>
 @endguest
 
 @auth
   <div class='flex items-center mr-10 gap-10'>
         <p class='font-bold text-white text-2xl'>User Conected: <b class='text-[#C89B3C]'>{{Auth::user()->username}}</b></p>
-        <select id='btn3' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 outline-none'>
-            <option id='o1'  value='lt'>LT</option>
-            <option id='o2' value='en'>EN</option>
-        </select>
+        <form method='POST' action='/Logout'>
+            @csrf
+         <button type='submit' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>log out </button>
+        </form>
     </div>
 @endauth
 
@@ -49,7 +46,7 @@
 
 
 <div class='flex items-center justify-center '>
-    <div class='grid grid-cols-4 gap-15 mt-20 bg-black rounded-sm border-2 border-[#C89B3C] p-20 rounded-sm'>
+    <div class='grid grid-cols-4 gap-15 mt-20 bg-black rounded-sm border-2 border-[#C89B3C] p-20 rounded-sm '>
         <div class='relative rounded-xl bg-center bg-cover bg-[url("/public/images/League-of-Legends-12.jpg")] w-90 h-90 hover:scale-105 transition-transform duration-300 border-2 border-[#C89B3C] hover:text-[#C89B3C] transition-transform duration-300'  >
 
             <a href="Champions" class='absolute top-0 left-0 right-0 bottom-0'></a>
@@ -73,6 +70,6 @@
 
 <div class='mt-30 p-10 bottom-0 right-0 left-0 bg-black w-full absolute border-1 border-[#C89B3C]'></div>
 
-<script src='/js/main.js'></script>
+  
 </body>
 </html>

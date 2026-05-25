@@ -16,22 +16,19 @@
     </div>
 @guest
      <div class='flex items-center mr-10 gap-10'>
-       <a href='/Sign'> <button id='btn1' class='p-3 bg-black border border-blue-900 rounded-sm  hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>sign up </button></a>
-      <a href='/Login'>  <button id='btn2' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>log in </button></a>
-        <select id='btn3' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 outline-none'>
-            <option id='o1'  value='lt'>LT</option>
-            <option id='o2' value='en'>EN</option>
-        </select>
+       <a href='/Sign'> <button class='p-3 bg-black border border-blue-900 rounded-sm  hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>sign up </button></a>
+      <a href='/Login'>  <button  class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>log in </button></a>
+        
     </div>
 @endguest
 
 @auth
   <div class='flex items-center mr-10 gap-10'>
         <p class='font-bold text-white text-2xl'>User Conected: <b class='text-[#C89B3C]'>{{Auth::user()->username}}</b></p>
-        <select id='btn3' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 outline-none'>
-            <option id='o1'  value='lt'>LT</option>
-            <option id='o2' value='en'>EN</option>
-        </select>
+        <form method='POST' action='/Logout'>
+            @csrf
+         <button type='submit' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>log out </button>
+        </form>
     </div>
 @endauth
 
@@ -52,41 +49,41 @@
 <hr class="border-1 ml-20 mr-20 border-[#C89B3C]  w-90%">
 <div class='flex justify-center items-center p-40 mt-30 '>    
      
- <p class='text-3xl font-bold '>Here you can find information about all the champions in the game, including their abilities, lore, and tips! </p>
+ <p class='text-3xl font-bold text-[#C89B3C]'>Here you can find information about all the items in the game, including their stats and gold cost! </p>
 </div>
 <hr class="border-1 ml-20 mr-20 border-[#C89B3C] mt-30 w-90%">
 
 <div class='flex-col justify-center items-center  mt-40 border-1 border-[#C89B3C] ml-30 mr-30 mb-30 bg-black'>
-
+<div class='flex flex-col items-center justify-center mt-15 '>
+        <div class='mt-10  '>
+            <p class='text-xl font-bold text-center text-[#C89B3C] mb-10'>Search for a champion: </p>
+            <input class='inputas text-[#C89B3C] bg-white w-150 p-5 rounded outline-none hover:scale-105 transition-transform duration-300 shadow-md rounded-sm 'type='text' placeholder='Search'>
+        </div>
+        
+    </div>
+   <hr class="border-1 ml-20 mr-20 border-[#C89B3C] mt-30 w-90%">
     <div class='flex justify-center items-center mt-20 '>    
-    <p class='text-xl font-bold '>Filter Champions by type:</p>
+    <p class='text-xl font-bold text-[#C89B3C] '>Filter Champions by type:</p>
     </div>
 
-    <div class='flex justify-center items-center gap-20 mt-10'>
+    <div class='flex justify-center items-center gap-20 mt-10 mx-auto ml-20 mr-20 flex-wrap'>
         
-        <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Fighters</button>
-        <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Assassins</button>
-        <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Mages</button>
-        <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Marksmen</button>
-        <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Supports</button>
-        <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Tanks</button>
-
+        <button id='Starter' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Starter</button>
+        <button id='Epic' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Epic</button>
+        <button id='Legendary' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Legendary</button>
+         <button id='Boots' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Boots</button>
+        <button id='Arena' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Arena Items</button>
+        <button id='Prismatics' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Arena Prismatics</button>
+        <button id='Aram' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Aram Starter Items</button>
+        <button id='Consumables' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Consumables</button>
+        <button id='Trinkets' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Trinkets</button>
+        <button id='All' class='p-5 pl-10 pr-10 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Reset</button>
     </div>
 
 
-    <div class='flex justify-center items-center  mt-20'>    
-    <p class='text-xl font-bold '>Filter Champions by Role:</p>
-    </div>
-    <div class='flex justify-center items-center gap-20 mt-20 mb-20'>
-        
-    <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Top</button>
-    <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Mid</button>
-    <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Jungle</button>
-    <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>ADC</button>
-    <button class='p-5 border rounded-sm border-[#C89B3C]  hover:bg-[#0A1428] hover:transition-transform duration-400'>Support</button>
-    
 
-    </div>
+
+     <hr class="border-1 ml-20 mr-20 mb-20 border-[#C89B3C] mt-30 w-90%">
  </div>
 <div class='flex-col justify-center items-center '>
    <hr class="border-1 ml-20 mr-20 border-[#C89B3C] mt-30 w-90%">
@@ -97,16 +94,16 @@
 
    </div>
     <hr class="border-1 ml-20 mr-20 border-[#C89B3C] mb-30 w-90%">
-    <div class='grid  grid-cols-9 gap-10 gap-y-20 p-15 ml-10 mr-10 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto '>
+    <div  class=' grid  grid-cols-9 gap-10 gap-y-20 p-15 ml-10 mr-10 border-2 rounded-sm border-[#C89B3C] bg-black  place-items-center mx-auto '>
        @php $uniqueItems = collect($items['data'])->unique('name') ->values() ->all(); 
         $excluded = ['Gunmetal Greaves','Cappa Juice'] ;   @endphp
 
        @foreach ($uniqueItems as $item)
         @if($item['maps']['11'] == true && ($item['gold']['purchasable'] == true) && (!in_array($item['name'],$excluded)) && ($item['gold']['total']>=250 && $item['gold']['total']<=450 ))
   
-            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+            <div data-tag='starter' class='verte relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
                 <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
-                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='vardas text-white'>{{ $item['name'] }}</b></p>
                 <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
             </div>
         @endif
@@ -138,9 +135,9 @@
         
                     
             
-            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+            <div data-tag='epic' class='verte relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
                 <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
-                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class=' absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='vardas text-white'>{{ $item['name'] }}</b></p>
                 <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
             </div>
         @endif
@@ -171,9 +168,9 @@
  
            
                 
-            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+            <div data-tag='legendary' class='verte relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
                 <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
-                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='vardas text-white'>{{ $item['name'] }}</b></p>
                 <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
             </div>
         @endif
@@ -198,9 +195,9 @@
         
                     
             
-            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+            <div data-tag='boots' class='verte relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
                 <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
-                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='vardas text-white'>{{ $item['name'] }}</b></p>
                 <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
             </div>
             @endif   @endif
@@ -231,9 +228,9 @@
  
            
                 
-            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+            <div data-tag='arena items' class='verte relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
                 <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
-                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='vardas text-white'>{{ $item['name'] }}</b></p>
                 <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
             </div>
         @endif
@@ -263,9 +260,9 @@
  
            
                 
-            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+            <div data-tag='arena prismatics' class='verte relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
                 <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
-                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='vardas text-white'>{{ $item['name'] }}</b></p>
                 <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
             </div>
         @endif
@@ -295,9 +292,9 @@
        @foreach ($items['data'] as $item)
         @if($item['maps']['12'] == true  &&  ($item['gold']['purchasable'] == true) && !empty(array_intersect($item['tags'], $IncludedTags)) && !in_array($item['name'], $excluded) && $item['gold']['total'] <= 950 ) 
             
-            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+            <div data-tag='aram starter items' class='verte relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
                 <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
-                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white'>{{ $item['name'] }}</b></p>
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='vardas text-white'>{{ $item['name'] }}</b></p>
                 <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
             </div>
             @endif  
@@ -327,9 +324,9 @@
        @foreach ($uniqueItems as $item)
         @if($item['maps']['12'] == true && (in_array('Consumable', $item['tags']))  && (!in_array($item['name'],$excluded))  && ($item['gold']['purchasable'] == true) ) 
             
-            <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+            <div data-tag='consumables' class='verte relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
                 <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
-                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white text-center'>{{ $item['name'] }}</b></p>
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='vardas text-white text-center'>{{ $item['name'] }}</b></p>
                 <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
             </div>
             @endif  
@@ -355,9 +352,9 @@
         
                     
             
-           <div class='relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
+           <div data-tag='trinkets' class='verte relative group  cursor-pointer hover:scale-105 transition-transform duration-200 border-2 rounded-sm border-[#C89B3C] hover:z-50 '>
                 <img  class='w-full h-[150px] object-cover rounded '    src="{{ $url . $item['image']['full'] }}" >
-                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='text-white text-center'>{{ $item['name'] }}</b></p>
+                <p class='absolute -bottom-10 opacity-100 group-hover:opacity-0  hover:transition-opacity duration-400 font-bold p-2 w-[200px] z-10  '> <b class='vardas text-white text-center'>{{ $item['name'] }}</b></p>
                 <p class='absolute top-40 -left-20 opacity-0 group-hover:opacity-90 text-[#C89B3C] pointer-events-none text-xl hover:transition-opacity duration-400 font-bold p-2  text-shadow-lg border-2 border-[#C89B3C] z-10 bg-black w-[300px]'> <b class='text-white'>{{ $item['name'] }}</b> <br> Gold Worth : {{$item['gold']['total']}} <br> Description : {{strip_tags($item['description']) }}</p>
             </div>
             @endif   @endif
@@ -370,6 +367,7 @@
 <div class=' mt-100 border-1 border-[#C89B3C]'>
     <div class='p-10 bg-black w-full absolute'>
 </div>
+<script src='/js/items.js'></script>
 
 </body>
 </html>

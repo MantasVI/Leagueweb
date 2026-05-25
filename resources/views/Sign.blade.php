@@ -17,8 +17,8 @@
      <div class='flex items-center mr-10 gap-10'>
            <a href='Login'>  <button id='btn2' class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 '>log in </button></a>
         <select class='p-3 bg-black border border-blue-900  rounded-sm hover:border-[#C89B3C] hover:bg-[#0A1428] hover:transition-transform duration-300 outline-none'>
+           <option  value='en'>EN</option> 
             <option  value='lt'>LT</option>
-            <option  value='en'>EN</option>
         </select>
     </div>
 
@@ -68,5 +68,6 @@
 
     </form>
      <div class='mt-60 p-10 bottom-0 right-0 left-0 bg-black w-full absolute border-1 border-[#C89B3C]'></div>
+
 </body>
 </html>
